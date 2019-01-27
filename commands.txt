@@ -1,0 +1,8 @@
+# Migrations
+aqueduct db generate
+aqueduct db validate
+aqueduct db upgrade
+aqueduct db upgrade --connect postgres://username:password@localhost:5432/my_application
+
+# Add oauth2 client
+aqueduct auth add-client --id com.portikko --secret kQvaSK2gfbcG2hf2vFTmQRPV2Twd --connect postgres://root:root@localhost:5432/portikko

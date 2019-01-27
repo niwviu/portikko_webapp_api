@@ -2,7 +2,7 @@ import 'package:portikko_webapp_api/portikko_webapp_api.dart';
 
 Future main() async {
   final app = Application<PortikkoWebappApiChannel>()
-    ..options.configurationFilePath = "config.yaml"
+    ..options.configurationFilePath = "config.src.yaml"
     ..options.port = 8888;
 
   final count = Platform.numberOfProcessors ~/ 2;

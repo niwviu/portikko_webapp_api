@@ -19,10 +19,3 @@ The default configuration file used when testing is `config.src.yaml`. This file
 ## Deploying an Application
 
 See the documentation for [Deployment](https://aqueduct.io/docs/deploy/).
-
-## Running migrations
-
-Run `aqueduct db generate` to generate migrations files.
-Run `aqueduct db validate` to validate syntax.
-Run `aqueduct db upgrade` to create the db transactions.
-Run `aqueduct db upgrade --connect postgres://username:password@localhost:5432/my_application`. Run this command for production.
