@@ -1,4 +1,5 @@
 import 'package:aqueduct/managed_auth.dart';
+import 'package:portikko_webapp_api/controller/registration_controller.dart';
 import 'package:portikko_webapp_api/model/user.dart';
 import 'portikko_webapp_api.dart';
 
@@ -51,11 +52,13 @@ class PortikkoWebappApiChannel extends ApplicationChannel {
   Controller get entryPoint {
     final router = Router(basePath: '/api');
 
-    // Prefer to use `link` instead of `linkFunction`.
-    // See: https://aqueduct.io/docs/http/request_controller/
-    router.route("/example").linkFunction((request) async {
-      return Response.ok({"key": "value"});
-    });
+    // Generates tokens
+    router.route('/auth/token').link(() => AuthController(authServer));
+
+    // User registration
+    router
+        .route('/register')
+        .link(() => RegisterController(context, authServer));
 
     return router;
   }

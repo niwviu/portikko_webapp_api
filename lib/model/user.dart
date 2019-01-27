@@ -18,11 +18,11 @@ class _User extends ResourceOwnerTableDefinition {
   String email;
 
   @Column(nullable: false)
-  bool active = true;
+  bool active;
 
-  @Column(indexed: true)
+  @Column(indexed: true, nullable: false)
   DateTime createdAt;
 
-  @Column(indexed: true)
+  @Column(indexed: true, nullable: false)
   DateTime updatedAt;
 }
