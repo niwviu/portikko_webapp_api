@@ -1,0 +1,15 @@
+name: portikko_webapp_api
+description: Portikko project.
+version: 0.0.1
+author: Jesús Arellano Gutiérrez <ing.jesus.arellano27@gmail.com>
+
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+
+dependencies:
+  aqueduct: ^3.0.0
+  safe_config: ^2.0.2
+
+dev_dependencies:
+  test: ^1.0.0
+  aqueduct_test: ^1.0.0
