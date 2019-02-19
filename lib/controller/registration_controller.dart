@@ -13,8 +13,12 @@ class RegisterController extends ResourceController {
     // Check for required parameters before we spend time hashing
     if ((user.email == null || user.password == null) ||
         (user.email.isEmpty || user.password.isEmpty)) {
-      return Response.badRequest(
-          body: {"error": "email and password required."});
+      return Response.badRequest(body: {
+        "error": {
+          "en": "email and password required.",
+          "es": "email y password son campos requeridos."
+        }
+      });
     }
 
     // Check if user exists
@@ -24,7 +28,12 @@ class RegisterController extends ResourceController {
 
     // If user exists return error
     if (exists != null) {
-      return Response.badRequest(body: {"error": "User already exists."});
+      return Response.badRequest(body: {
+        "error": {
+          "en": "User already exists.",
+          "es": "Correo electrónico ya registrado."
+        }
+      });
     }
 
     // Register user
