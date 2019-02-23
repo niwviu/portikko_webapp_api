@@ -1,4 +1,5 @@
 import 'package:aqueduct/managed_auth.dart';
+import 'package:portikko_webapp_api/controller/profile_controller.dart';
 import 'package:portikko_webapp_api/controller/registration_controller.dart';
 import 'package:portikko_webapp_api/model/user.dart';
 import 'portikko_webapp_api.dart';
@@ -59,6 +60,12 @@ class PortikkoWebappApiChannel extends ApplicationChannel {
     router
         .route('/register')
         .link(() => RegisterController(context, authServer));
+
+    // Return authenticated user
+    router
+        .route('/profile')
+        .link(() => Authorizer.bearer(authServer))
+        .link(() => ProfileController(context));
 
     return router;
   }
