@@ -8,6 +8,9 @@ class User extends ManagedObject<_User>
 }
 
 class _User extends ResourceOwnerTableDefinition {
+  @Column(omitByDefault: true)
+  String username;
+
   @Column(nullable: true)
   String name;
 
